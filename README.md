@@ -70,4 +70,25 @@ eine Änderung an einer Klasse sollte möglichst geringen Einfluss auf andere Kl
 #### Übung 8.15:Einen weiteren Befehl hinzufügen <br>
 ![img_9.png](img_9.png) ![img_10.png](img_10.png)
 
-#### Übung 8.16: <br>
+#### Übung 8.17:  <br>
+Nein, weil die Liste der Befehle aus dem Array erzeugt und 
+enthält daher automatisch alle neuen Befehle, die diesem Array hinzugefügt wurden.
+
+#### Übung 8.18:Implementieren der Änderungen <br>
+![img_15.png](img_15.png) ![img_13.png](img_13.png)  ![img_14.png](img_14.png)
+
+#### Übung 8.21: <br>
+a) Räume sollten wissen, welche Gegenstände sie enthalten und diese Informationen generieren.
+
+b) Die Klasse für Gegenstände sollte für die Erstellung der Beschreibungen der Gegenstände verantwortlich sein.
+
+c) Die Spielklasse sollte die Beschreibungen der Gegenstände ausgeben, aber normalerweise passiert dies, wenn ein Raum beschrieben wird, der die Gegenstände enthält. <br>
+
+#### Übung 8.22: <br>
+Siehe die Klassen Gegenstände, Raum. 
+
+#### Übung 8.23: Befehl zurück einfügen <br>
+![img_16.png](img_16.png) ![img_17.png](img_17.png) ![img_18.png](img_18.png)
+
+#### Übung 8.24: Befehl zurück einfügen <br>
+

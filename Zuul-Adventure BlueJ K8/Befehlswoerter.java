@@ -15,7 +15,7 @@ class Befehlswoerter
 {
     // ein konstantes Array mit den gültigen Befehlswörtern
     private static final String gueltigeBefehle[] = {
-        "go", "quit", "help", "look"
+        "go", "quit", "help", "look", "back"
     };
 
     /**
@@ -43,10 +43,13 @@ class Befehlswoerter
         return false;
     }
 
-    public void alleAusgeben(){
+    public String gibBefehlsListe(){
+        String Befehlsliste = "";
+
         for (String befehl:gueltigeBefehle) {
-            System.out.println(befehl + " ");
+            Befehlsliste += befehl + " ";
         }
-        System.out.println();
+        return Befehlsliste;
     }
+
 }

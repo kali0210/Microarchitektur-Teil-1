@@ -1,4 +1,6 @@
 import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Iterator;
 
 /**
  * Diese Klasse modelliert Räume in der Welt von Zuul.
@@ -20,6 +22,7 @@ public class Raum {
     private String beschreibung;
     private HashMap<String, Raum> ausgaenge;
 
+    private HashSet<Gegenstaende> gegenstaende;
 
 
 
@@ -34,6 +37,7 @@ public class Raum {
     {
         this.beschreibung = beschreibung;
         ausgaenge = new HashMap<>();
+        gegenstaende = new HashSet<>();
     }
 
     /**
@@ -66,7 +70,7 @@ public class Raum {
      * @return eine lange Beschreibung dieses Raums
      */
     public String gibLangeBeschreibung(){
-        return "Sie sind " + beschreibung + "\n" + gibAusgaengealsString();
+        return "Sie sind " + beschreibung + "\n" + gibAusgaengealsString() + "\n" + gibAusgaengealsString();
     }
 
     /**
@@ -91,6 +95,18 @@ public class Raum {
             retournString += "west";
         }
         return  retournString;
+    }
+
+    public String gibGegenstaendealsString(){
+        String gibAus = "Gegenstände";
+        for (Iterator<Gegenstaende> iter = gegenstaende.iterator(); iter.hasNext();){
+            gibAus += " " + iter.next().getBeschreibung();
+        }
+        return gibAus;
+    }
+
+    public void gegenstandAblegen(Gegenstaende gegenstand){
+        gegenstaende.add(gegenstand);
     }
 
 }

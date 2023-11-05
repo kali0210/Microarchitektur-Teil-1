@@ -67,11 +67,9 @@ class Parser
         }
     }
 
-    /**
-     * Gib eine Liste der bekannten Befehlswörter aus.
-     */
-    public void zeigeBefehle(){
-        befehle.alleAusgeben();
+    public String gibBefehlsliste() {
+        return this.befehle.gibBefehlsListe();
     }
+
 
 }

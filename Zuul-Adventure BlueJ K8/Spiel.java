@@ -21,6 +21,8 @@ public class Spiel {
     private Parser parser;
     private Raum aktuellerRaum;
 
+    private Raum vorherigeRaum;
+
     /**
      * Erzeuge ein Spiel und initialisiere die interne Raumkarte.
      */
@@ -56,6 +58,25 @@ public class Spiel {
         aktuellerRaum = draussen;  // das Spiel startet draussen
     }
 
+    private void Zimmerbetreten(Raum naechsteRaum){
+        vorherigeRaum = aktuellerRaum;
+        aktuellerRaum = naechsteRaum;
+        System.out.println(aktuellerRaum.gibLangeBeschreibung());
+
+    }
+
+    private void zurueckGehen(Befehl befehl){
+        if (befehl.hatZweitesWort()){
+            System.out.println("Zurück Wohin?");
+            return;
+        }
+        if (vorherigeRaum == null){
+            System.out.println("Du kannst nicht mehr zurückgehen");
+        }else {
+            Zimmerbetreten(vorherigeRaum);
+        }
+    }
+
     /**
      * Die Hauptmethode zum Spielen. Läuft bis zum Ende des Spiels
      * in einer Schleife.
@@ -84,7 +105,6 @@ public class Spiel {
         System.out.println("Zuul ist ein neues, unglaublich langweiliges Spiel.");
         System.out.println("Tippen Sie 'help', wenn Sie Hilfe brauchen.");
         System.out.println();
-        rauminfoAusgeben();
         System.out.println(aktuellerRaum.gibLangeBeschreibung());
     }
 
@@ -99,7 +119,7 @@ public class Spiel {
      * Verarbeite einen gegebenen Befehl (führe ihn aus).
      *
      * @param befehl der zu verarbeitende Befehl.
-     * @return true    wenn der Befehl das Spiel beendet, false sonst
+     * @return true wenn der Befehl das Spiel beendet, false sonst
      */
     private boolean verarbeiteBefehl(Befehl befehl) {
         boolean moechteBeenden = false;
@@ -119,6 +139,8 @@ public class Spiel {
             eat();
         } else if (befehlswort.equals("quit")) {
             moechteBeenden = beenden(befehl);
+        } else if (befehlswort.equals("back")){
+            zurueckGehen(befehl);
         }
         return moechteBeenden;
     }
@@ -135,7 +157,7 @@ public class Spiel {
         System.out.println("Sie irren auf dem Unigelände herum.");
         System.out.println();
         System.out.println("Ihnen stehen folgende Befehle zur Verfügung:");
-        parser.zeigeBefehle();
+        System.out.println(parser.gibBefehlsliste());
     }
 
     /**
@@ -163,14 +185,15 @@ public class Spiel {
             System.out.println(aktuellerRaum.gibLangeBeschreibung());
 
         }
+    }
 
         /**
          * "quit" wurde eingegeben. Überprüfe den Rest des Befehls,
          * ob das Spiel wirklich beendet werden soll.
          * @return true, wenn der Befehl das Spiel beendet, false sonst
          */
-        private boolean beenden(Befehl befehl)
-        {
+        private boolean beenden(Befehl befehl){
+
             if(befehl.hatZweitesWort()) {
                 System.out.println("Was soll beendet werden?");
                 return false;
@@ -178,7 +201,6 @@ public class Spiel {
             else {
                 return true;  // Das Spiel soll beendet werden.
             }
-        }
     }
     public void umsehen(){
         System.out.println(aktuellerRaum.gibLangeBeschreibung());
