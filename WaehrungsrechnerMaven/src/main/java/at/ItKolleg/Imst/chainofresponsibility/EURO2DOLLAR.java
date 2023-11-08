@@ -25,20 +25,7 @@ public class EURO2DOLLAR extends WR {
         }
     }
 
-    @Override
-    public double umrechnen(String variante, double betrag) throws InvalidVarianteException {
-        if (zustaendig(variante))
-        {
-            super.umrechnen(variante, betrag);
-            return getFaktor() * betrag;
-        }
-        else if (getNext() != null){
-            return getNext().umrechnen(variante, betrag);
-        }
-        else {
-            throw new InvalidVarianteException();
-        }
-    }
+
 
     public static class Builder{
         private double faktor;

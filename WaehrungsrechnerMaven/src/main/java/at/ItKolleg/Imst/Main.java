@@ -18,7 +18,6 @@ public class Main {
         WR dollar = new EURO2DOLLAR.Builder().mitFaktor(1.2)
                 .mitNaechsteKettenMitglied(yen).
                 build();
-        
 
         try {
             System.out.println(dollar.umrechnen("EURO2DOLLAR", 100));
@@ -64,7 +63,6 @@ public class Main {
             ((WR)dollar2).addObserver(log);
             ((WR)dollar2).addObserver(afo);
         }
-
 
         try {
             dollar2.umrechnen("EURO2DOLLAR", 100);

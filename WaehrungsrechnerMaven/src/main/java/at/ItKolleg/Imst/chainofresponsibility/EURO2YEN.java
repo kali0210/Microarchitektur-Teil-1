@@ -5,7 +5,7 @@ import at.ItKolleg.Imst.wr.WR;
 
 public class EURO2YEN extends WR {
     @Override
-    public double getFaktor(){
+    public double getFaktor() {
         return 1.2;
     }
 
@@ -18,18 +18,5 @@ public class EURO2YEN extends WR {
         }
     }
 
-    @Override
-    public double umrechnen(String variante, double betrag) throws InvalidVarianteException {
-        if (zustaendig(variante))
-        {
-            return getFaktor() * betrag;
-        }
-        else if (getNext() != null){
-            return getNext().umrechnen(variante, betrag);
-        }
-        else {
-            throw new InvalidVarianteException();
-        }
-    }
 }
 
