@@ -5,7 +5,6 @@ import com.sun.syndication.feed.atom.Entry;
 import com.sun.syndication.feed.atom.Feed;
 import com.sun.syndication.io.FeedException;
 import com.sun.syndication.io.WireFeedOutput;
-
 import java.util.Date;
 
 public class AtomFeedObserver implements Observer{

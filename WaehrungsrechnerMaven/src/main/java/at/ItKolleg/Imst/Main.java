@@ -57,7 +57,6 @@ public class Main {
 
         AtomFeedObserver afo = new AtomFeedObserver();
         LogObserver log = new LogObserver();
-        log.update("Update");
 
         if (dollar2 instanceof WR){
             ((WR)dollar2).addObserver(log);
