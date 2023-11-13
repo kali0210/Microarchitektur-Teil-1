@@ -1,41 +1,41 @@
 package at.ItKolleg.Imst.Observer;
-import javax.imageio.IIOException;
-import java.io.FileWriter;
 import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-import java.nio.file.StandardOpenOption;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.io.File;
+import java.io.FileWriter;
 
-public class LogObserver implements Observer{
-
-    private Path logPath;
-
-   private static final String LOG_DIRECTORY = "logs";
-   private static final String LOG_FILE_NAME = "logdatei.txt";
+public class LogObserver implements Observer {
+    private String logFilePath;
+    private static final String LOG_FILE_NAME = "logdatei.txt";
 
     public LogObserver() {
-        this.logPath = Paths.get(LOG_DIRECTORY, LOG_FILE_NAME).toAbsolutePath();
+
+        this.logFilePath = LOG_FILE_NAME;
+
         try {
-            Files.createDirectories(logPath.getParent());
-            if (Files.notExists(logPath)){
-                Files.createFile(logPath);
+            File logFile = new File(logFilePath);
+
+            if (!logFile.exists()) {
+                logFile.createNewFile();
             }
-        }catch (IOException e){
-            throw new RuntimeException("Fehler beim Erstellen der Log-Datei" + logPath,e);
+        } catch (IOException e) {
+            throw new RuntimeException("Fehler beim Erstellen der Log-Datei: " + logFilePath, e);
         }
     }
 
     @Override
     public void update(String message) {
-        String logEntry = LocalDateTime.now().format(DateTimeFormatter.ISO_DATE_TIME) + " - "
-                + message + System.lineSeparator();
+        String logEntry = LocalDateTime.now().format(DateTimeFormatter.ISO_DATE_TIME) + " - " + message + System.lineSeparator();
+
         try {
-            Files.writeString(logPath, logEntry, StandardOpenOption.APPEND);
+            try (FileWriter writer = new FileWriter(this.logFilePath, true)) {
+
+                writer.write(logEntry);
+                System.out.println("Nachricht  in Log-Datei geschrieben: " + message);
+            }
         } catch (IOException e) {
-            System.out.println("Fehler beim Schreibem in die Log-Datei " + e.getMessage());
+            System.err.println("Fehler beim Schreiben in die Log-Datei: " + e.getMessage());
         }
     }
 }

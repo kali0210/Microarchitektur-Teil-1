@@ -26,7 +26,6 @@ public class EURO2DOLLAR extends WR {
     }
 
 
-
     public static class Builder{
         private double faktor;
         private WR next;

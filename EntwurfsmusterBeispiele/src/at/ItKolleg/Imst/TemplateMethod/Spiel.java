@@ -2,7 +2,7 @@ package at.ItKolleg.Imst.TemplateMethod;
 
 /**
  * Abstrakte Klasse Spiel definiert das Skelett eines Spiels.
- * Sie verwendet die Template Method
+ * Die verwendet die Template Method
  **/
 public abstract class Spiel {
 
