@@ -1,0 +1,2 @@
+2023-11-13T21:09:10.5885069 - Update
+2023-11-13T21:09:10.6085598 - Umrechnung wurde durchgeführt: 2023-11-13 21:09:10 100,00 € EURO2DOLLAR zu 120,00 $  
