@@ -29,10 +29,6 @@ public abstract class WR implements IUmrechnen, Subject {
         throw new InvalidVarianteException();
     }
 
-    public WR getNext() {
-        return next;
-    }
-
     public void addChain(WR next) {
         if (this.next == null)
         {

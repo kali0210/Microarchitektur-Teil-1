@@ -1,5 +1,4 @@
 package at.ItKolleg.Imst.Observer;
-
 import com.sun.syndication.feed.atom.Content;
 import com.sun.syndication.feed.atom.Entry;
 import com.sun.syndication.feed.atom.Feed;
@@ -40,6 +39,5 @@ public class AtomFeedObserver implements Observer{
         } catch (FeedException e) {
             e.printStackTrace();
         }
-
     }
 }

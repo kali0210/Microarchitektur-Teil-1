@@ -42,6 +42,26 @@ sodass, wenn ein Objekt seinen Zustand ändert, alle seine abhängigen benachric
 
 ## Designprinzipien
 
+### Single Responsibility
+Jede Klasse sollte nur eine Aufgabe haben. <br>
+
+### Open/Closed
+Man sollte Klassen leicht erweitern können, ohne ihren Code zu ändern.  <br>
+
+### Liskov Substitution
+Objekte einer Basisklasse sollten sich durch Objekte von Unterklassen 
+ersetzen lassen, ohne dass das Verhalten der Anwendung beeinträchtigt wird<br>
+
+### Interface Segregation
+Statt einer großen Schnittstelle ist es besser, mehrere spezifische Schnittstellen zu haben, 
+sodass die Klassen nur die Schnittstellen implementieren <br>
+
+## Andere Prinzipien
+
+### Dependency Inversion
+Abhängigkeiten sollten auf Schnittstellen oder abstrakten Klassen basieren, 
+nicht auf konkreten Klassen.<br>
+
 ### DRY - Don't Repeat Yourself
 Das DRY-Prinzip betont die Wichtigkeit, Wiederholungen im Code zu vermeiden. 
 Der Grundgedanke ist, dass jede Information oder Funktionalität in einem System nur einmal vorhanden sein sollte.

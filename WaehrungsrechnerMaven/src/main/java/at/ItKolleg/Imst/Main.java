@@ -36,8 +36,8 @@ public class Main {
         WR euro2dollarFixGeb = new FixeGebuehrDecorator(euro2dollarRechner);
 
         try {
-            System.out.println("100€ in Dollar mit Prozentbeühren" + euro2dollarProzent.umrechnen("EURO2DOLLAR", 100));
-            System.out.println("100€ in Dollar mit Fixegebühren" + euro2dollarFixGeb.umrechnen("EURO2DOLLAR", 100));
+            System.out.println("100€ in Dollar mit Prozentbeühren" + " " + euro2dollarProzent.umrechnen("EURO2DOLLAR", 100));
+            System.out.println("100€ in Dollar mit Fixegebühren" + " " +  euro2dollarFixGeb.umrechnen("EURO2DOLLAR", 100));
         } catch (InvalidVarianteException e) {
             throw new RuntimeException(e);
         }
@@ -64,7 +64,7 @@ public class Main {
         }
 
         try {
-            dollar2.umrechnen("EURO2DOLLAR", 100);
+            dollar2.umrechnen("EURO2DOLLAR", 200);
         } catch (InvalidVarianteException e){
             e.printStackTrace();
         }

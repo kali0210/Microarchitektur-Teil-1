@@ -15,7 +15,7 @@ public class FixeGebuehrDecorator extends WRDecorater {
     @Override
     public double umrechnen(String variante, double betrag) throws InvalidVarianteException {
         double result = super.umrechnen(variante, betrag);
-        if (variante.startsWith("EURO2")){
+        if (variante.startsWith("EURO")){
             return result - fixeGebuehr;
         }
         return result;
