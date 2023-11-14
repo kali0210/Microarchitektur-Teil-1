@@ -9,3 +9,6 @@
 2023-11-14T20:33:02.5885664 - Umrechnung wurde durchgeführt: 2023-11-14 20:33:02 200,00 € EURO2DOLLAR zu 240,00 $  
 2023-11-14T20:33:07.5411117 - Umrechnung wurde durchgeführt: 2023-11-14 20:33:07 200,00 € EURO2DOLLAR zu 240,00 $  
 2023-11-14T20:36:50.8629869 - Umrechnung wurde durchgeführt: 2023-11-14 20:36:50 10,00 € EUR2YEN zu 12,00 $  
+2023-11-14T22:02:32.6809366 - Umrechnung wurde durchgeführt: 2023-11-14 22:02:32 10,50 € EURO2DOLLAR zu 12,60 $  
+2023-11-14T22:02:32.7489327 - Umrechnung wurde durchgeführt: 2023-11-14 22:02:32 20,90 € EURO2DOLLAR zu 25,08 $  
+2023-11-14T22:02:32.7499356 - Umrechnung wurde durchgeführt: 2023-11-14 22:02:32 80,99 € EURO2DOLLAR zu 97,19 $  

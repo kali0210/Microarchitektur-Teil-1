@@ -28,6 +28,8 @@ public class LogObserver implements Observer {
     public void update(String message) {
         String logEntry = LocalDateTime.now().format(DateTimeFormatter.ISO_DATE_TIME) + " - " + message + System.lineSeparator();
 
+        // Erste Try fängt fehler beim Schreiben
+        // Zweite Try sorgt, dass die Datei immer richtig geschlossen wird.
         try {
             try (FileWriter writer = new FileWriter(this.logFilePath, true)) {
 

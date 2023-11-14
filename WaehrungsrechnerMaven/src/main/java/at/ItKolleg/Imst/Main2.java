@@ -1,5 +1,4 @@
 package at.ItKolleg.Imst;
-
 import at.ItKolleg.Imst.Decorator.FixeGebuehrDecorator;
 import at.ItKolleg.Imst.Decorator.ProzentuelleGebDecorator;
 import at.ItKolleg.Imst.Decorator.WRDecorater;
@@ -7,6 +6,7 @@ import at.ItKolleg.Imst.Exceptions.InvalidVarianteException;
 import at.ItKolleg.Imst.Interfaces.IUmrechnen;
 import at.ItKolleg.Imst.Observer.AtomFeedObserver;
 import at.ItKolleg.Imst.Observer.LogObserver;
+import at.ItKolleg.Imst.Observer.Observer;
 import at.ItKolleg.Imst.adapter.UmrechnungsAdapter;
 import at.ItKolleg.Imst.chainofresponsibility.EURO2DOLLAR;
 import at.ItKolleg.Imst.chainofresponsibility.EURO2YEN;
@@ -31,6 +31,17 @@ public class Main2 {
         UmrechnungsAdapter umrechnungsAdapter = new UmrechnungsAdapter(eur2dollar3);
         double [] betraege = {10.50, 20.90, 80.99};
 
+        //Observer
+        Observer atom = new AtomFeedObserver();
+        Observer log = new LogObserver();
+
+        // Prüft ob eur2dollar3 in WR-Klasse gibt
+        if (eur2dollar3 instanceof WR)
+        {
+            ((WR)eur2dollar3).addObserver(log);
+            ((WR)eur2dollar3).addObserver(atom);
+        }
+
         //Testung
         try {
             System.out.println(eur2dollar.umrechnen("EUR2YEN", 10));
@@ -38,7 +49,7 @@ public class Main2 {
             System.out.println(fixGeb.umrechnen("EUR2YEN", 10));
             System.out.println(eurProzent.umrechnen("EURO2DOLLAR", 10));
             System.out.println(eur2usdnew.umrechnen("EURO2DOLLAR", 10));
-            System.out.println(umrechnungsAdapter.sammelumrechnen(betraege, "EURo2DOLLAR"));
+            System.out.println(umrechnungsAdapter.sammelumrechnen(betraege, "EURO2DOLLAR"));
         } catch (InvalidVarianteException e) {
             throw new RuntimeException(e);
         }
