@@ -90,5 +90,49 @@ Siehe die Klassen Gegenstände, Raum.
 #### Übung 8.23: Befehl zurück einfügen <br>
 ![img_16.png](img_16.png) ![img_17.png](img_17.png) ![img_18.png](img_18.png)
 
-#### Übung 8.24: Befehl zurück einfügen <br>
+#### Übung 8.24: <br>
+Wenn das Spiel gerade gestartet wird, gibt es keinen vorherigen Raum. 
+In der obigen Implementierung wird dies behandelt, indem eine Meldung an den Benutzer ausgegeben <br>
 
+#### Übung 8.25: <br>
+Wenn Sie zweimal "Zurück" eintippen, landen Sie in dem Raum, in dem Sie beim ersten Mal waren.
+
+#### Übung 8.26: <br>
+![img_19.png](img_19.png)![img_20.png](img_20.png)  <br>
+
+#### Übung 8.27: <br>
+Einige der Tests könnten sein:
+- Testen, dass die Räume richtig angeschlossen sind.
+- Testen, dass alle Befehle erkannt werden und wie erwartet funktionieren. <br>
+
+#### Übung 8.28: <br>
+![img_21.png](img_21.png)![img_22.png](img_22.png)![img_23.png](img_23.png)  <br>
+
+#### Übung 8.35: <br>
+Fügen Sie dies in Game.processCommand ein:
+else if (commandWord == CommandWord.LOOK) {
+look();
+}
+Und fügen Sie diese Methode zu Game hinzu:
+private void look()
+{
+System.out.println(currentRoom.longDescription());
+} <br>
+
+#### Übung 8.36: <br>
+Die Verwendung unterschiedlicher Befehlswörter erfordert nur Änderungen in der Klasse CommandWords. <br>
+
+#### Übung 8.37: <br>
+Wenn das Befehlswort für Hilfe geändert wird, wird es NICHT in der Begrüßungsmeldung geändert. <br>
+
+#### Übung 8.38: <br>
+public enum Direction
+{
+NORTH, SOUTH, EAST, WEST
+}<br>
+
+#### Übung 8.39: <br>
+Hier müssen wir der Klasse "Game" noch die Funktionalität dieser Klasse hinzufügen. <br>
+
+#### Übung 8.40: <br>
+Ja. Es wird nur das Enum selbst verwendet <br>

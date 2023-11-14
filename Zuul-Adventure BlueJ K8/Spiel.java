@@ -1,3 +1,5 @@
+import java.util.Stack;
+
 /**
  *  Dies ist die Hauptklasse der Anwendung "Die Welt von Zuul".
  *  "Die Welt von Zuul" ist ein sehr einfaches, textbasiertes
@@ -19,16 +21,19 @@
 
 public class Spiel {
     private Parser parser;
+    private Spieler spieler;
     private Raum aktuellerRaum;
 
-    private Raum vorherigeRaum;
+    private Stack<Raum> vorherigeRaum;
 
     /**
      * Erzeuge ein Spiel und initialisiere die interne Raumkarte.
      */
     public Spiel() {
+        spieler = new Spieler("Naruto");
         raeumeAnlegen();
         parser = new Parser();
+        vorherigeRaum = new Stack<>();
     }
 
     /**
@@ -59,7 +64,8 @@ public class Spiel {
     }
 
     private void Zimmerbetreten(Raum naechsteRaum){
-        vorherigeRaum = aktuellerRaum;
+
+        rauminfoAusgeben();
         aktuellerRaum = naechsteRaum;
         System.out.println(aktuellerRaum.gibLangeBeschreibung());
 
@@ -70,10 +76,11 @@ public class Spiel {
             System.out.println("Zurück Wohin?");
             return;
         }
-        if (vorherigeRaum == null){
+        if (vorherigeRaum.isEmpty()){
             System.out.println("Du kannst nicht mehr zurückgehen");
         }else {
-            Zimmerbetreten(vorherigeRaum);
+           Raum vRaum = vorherigeRaum.pop();
+           Zimmerbetreten(vRaum);
         }
     }
 
@@ -83,7 +90,6 @@ public class Spiel {
      */
     public void spielen() {
         willkommenstextAusgeben();
-        rauminfoAusgeben();
 
         // Die Hauptschleife. Hier lesen wir wiederholt Befehle ein
         // und führen sie aus, bis das Spiel beendet wird.
@@ -176,7 +182,7 @@ public class Spiel {
 
         // Wir versuchen, den Raum zu verlassen.
 
-        Raum naechsterRaum = aktuellerRaum.gibAusgang(richtung);
+        Raum naechsterRaum = spieler.getCurrentRoom().gibAusgang(richtung);
 
         if (naechsterRaum == null) {
             System.out.println("Dort ist keine Tür!");
