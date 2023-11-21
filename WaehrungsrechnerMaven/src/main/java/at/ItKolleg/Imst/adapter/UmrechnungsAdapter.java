@@ -1,10 +1,7 @@
 package at.ItKolleg.Imst.adapter;
-
 import at.ItKolleg.Imst.Exceptions.InvalidVarianteException;
 import at.ItKolleg.Imst.Interfaces.ISammelumrechnung;
 import at.ItKolleg.Imst.Interfaces.IUmrechnen;
-
-import java.util.Arrays;
 
 public class UmrechnungsAdapter implements ISammelumrechnung {
 

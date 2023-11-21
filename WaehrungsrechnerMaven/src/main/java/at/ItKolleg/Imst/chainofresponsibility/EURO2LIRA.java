@@ -1,21 +1,20 @@
 package at.ItKolleg.Imst.chainofresponsibility;
 
-import at.ItKolleg.Imst.Exceptions.InvalidVarianteException;
 import at.ItKolleg.Imst.wr.WR;
 
-public class EURO2YEN extends WR {
+public class EURO2LIRA extends WR {
+
     @Override
     public double getFaktor() {
-        return 1.2;
+        return 30.41;
     }
 
     @Override
     public boolean zustaendig(String variante) {
-        if (variante.equals("EUR2YEN")) {
+        if (variante.equals("EURO2LIRA")) {
             return true;
         } else {
             return false;
         }
     }
 }
-

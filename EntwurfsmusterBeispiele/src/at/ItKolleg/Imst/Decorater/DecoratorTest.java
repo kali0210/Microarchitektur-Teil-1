@@ -1,8 +1,6 @@
 package at.ItKolleg.Imst.Decorater;
 
-/**
- * Die Klasse DecoratorTest dient dazu, das Dekorierer zu testen
- */
+
 public class DecoratorTest {
 
     public static void main(String[] args) {

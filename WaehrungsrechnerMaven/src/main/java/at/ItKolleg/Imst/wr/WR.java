@@ -40,17 +40,6 @@ public abstract class WR implements IUmrechnen, Subject {
         }
     }
 
-    public void removeChain(WR removeChain)
-    {
-        if (this.next == removeChain) {
-            this.next = this.next.next;
-        }
-        else if (this.next != null)
-        {
-            this.next.removeChain(removeChain);
-        }
-    }
-
     @Override
     public abstract double getFaktor();
 
@@ -62,10 +51,6 @@ public abstract class WR implements IUmrechnen, Subject {
         observers.add(o);
     }
 
-    @Override
-    public void removeObserver(Observer o){
-        observers.remove(o);
-    }
 
     @Override
     public void messageObserver(String message){
@@ -76,7 +61,7 @@ public abstract class WR implements IUmrechnen, Subject {
 
     private String createMessage(double originalMenge, String waehrung, double umrechnungswaehrung){
         String zeitstempel = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"));
-        return String.format("Umrechnung wurde durchgeführt: %s %.2f € %s zu %.2f $  ",zeitstempel, originalMenge, waehrung, umrechnungswaehrung);
+        return String.format("Umrechnung wurde durchgeführt: %s %.2f € %s zu %.2f $", zeitstempel, originalMenge, waehrung, umrechnungswaehrung);
     }
 
 }

@@ -12,3 +12,12 @@
 2023-11-14T22:02:32.6809366 - Umrechnung wurde durchgeführt: 2023-11-14 22:02:32 10,50 € EURO2DOLLAR zu 12,60 $  
 2023-11-14T22:02:32.7489327 - Umrechnung wurde durchgeführt: 2023-11-14 22:02:32 20,90 € EURO2DOLLAR zu 25,08 $  
 2023-11-14T22:02:32.7499356 - Umrechnung wurde durchgeführt: 2023-11-14 22:02:32 80,99 € EURO2DOLLAR zu 97,19 $  
+2023-11-15T10:40:43.3927641 - Umrechnung wurde durchgeführt: 2023-11-15 10:40:43 10,00 € EURO2DOLLAR zu 12,00 $  
+2023-11-15T10:40:43.4062401 - Umrechnung wurde durchgeführt: 2023-11-15 10:40:43 10,00 € EURO2DOLLAR zu 12,00 $  
+2023-11-15T10:40:43.4082469 - Umrechnung wurde durchgeführt: 2023-11-15 10:40:43 10,00 € EURO2DOLLAR zu 12,00 $  
+2023-11-21T21:39:47.9400041 - Umrechnung wurde durchgeführt: 2023-11-21 21:39:47 10,50 € EURO2DOLLAR zu 12,60 $  
+2023-11-21T21:39:48.1194771 - Umrechnung wurde durchgeführt: 2023-11-21 21:39:48 20,90 € EURO2DOLLAR zu 25,08 $  
+2023-11-21T21:39:48.1224789 - Umrechnung wurde durchgeführt: 2023-11-21 21:39:48 80,99 € EURO2DOLLAR zu 97,19 $  
+2023-11-21T22:19:16.1697498 - Umrechnung wurde durchgeführt: 2023-11-21 22:19:16 10,50 € EURO2DOLLAR zu 12,60 $
+2023-11-21T22:19:16.3237153 - Umrechnung wurde durchgeführt: 2023-11-21 22:19:16 20,90 € EURO2DOLLAR zu 25,08 $
+2023-11-21T22:19:16.3261137 - Umrechnung wurde durchgeführt: 2023-11-21 22:19:16 80,99 € EURO2DOLLAR zu 97,19 $
